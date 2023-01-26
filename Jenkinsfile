@@ -32,11 +32,6 @@ pipeline {
       }
     }
 
-    stage('publish reports') {
-      steps {
-        echo 'publish'
-      }
-    }
 
     stage('deploy') {
       steps {
