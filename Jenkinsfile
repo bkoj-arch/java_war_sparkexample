@@ -35,9 +35,8 @@ pipeline {
 
     stage('deploy') {
       steps {
-        sh 'echo deploy'
-      }
+      deploy adapters: [tomcat9(credentialsId: 'manager_tomcat', path: '', url: 'http://localhost:8080')], contextPath: '/spark', war: 'target/*.war'
     }
-
+}
   }
 }
