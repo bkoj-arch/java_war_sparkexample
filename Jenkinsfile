@@ -20,8 +20,9 @@ pipeline {
 
     stage('verifs') {
       steps {
-        fileExists 'pom.xml'
-        sh 'ls -la'
+        
+	sh ' [ -e pom.xml ] && echo "le fichier pom.xml existe "'
+	sh 'ls -la'
       }
     }
 
